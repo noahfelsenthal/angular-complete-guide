@@ -12,6 +12,24 @@
         <li>Simply output Odd - NUMBER or Even - NUMBER in the two components</li>
         <li>Style the element (e.g. paragraph) holding your output text differently in both components</li>
       </ol>
+      <div class="row">
+        <div class="col-xs-12">
+          <app-game-control
+            (countIncremented)="onNumberIncremented($event)"
+          ></app-game-control>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <app-even 
+            *ngFor="let number of evenNumbers"
+            [currentNumber]="number"
+          ></app-even>
+          <app-odd
+            *ngFor="let number of oddNumbers"
+            [currentNumber]="number"
+          ></app-odd>
+        </div>
+      </div>
     </div>
   </div>
-</div>
